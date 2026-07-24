@@ -1,0 +1,25 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Boostup Export API
+  version: 1.0.0
+extends: openapi/boostup-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: boostup
+    x-apievangelist-rebrand: Terret (terret.ai)
+    x-apievangelist-auth: api-key (Authorization header)
+    x-apievangelist-pagination: limit/skip, max 1000 per page
+    x-apievangelist-status-page: https://status.boostup.ai/
+- target: $.servers
+  update:
+    x-apievangelist-absolute-base: https://app.boostup.ai/export
+- target: $.paths['/export/opportunity'].post
+  update:
+    x-apievangelist-entity: Opportunity
+- target: $.paths['/export/account'].post
+  update:
+    x-apievangelist-entity: Account
+- target: $.paths['/export/forecast_submission'].post
+  update:
+    x-apievangelist-entity: ForecastSubmission

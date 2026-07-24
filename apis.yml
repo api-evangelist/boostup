@@ -1,22 +1,132 @@
 aid: boostup
 name: Boostup
-description: Boostup is a company surfaced as a portfolio company of canaan-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Boostup (now operating as Terret, terret.ai) is an AI-powered revenue
+  intelligence platform that connects data across a company's revenue systems to
+  analyze sales performance, forecast pipeline, and translate insights into
+  real-time execution guidance for sales teams. Its products include Terret Nexus
+  (an answer-to-action revenue engine that generates playbooks), Terret Forecast
+  (pipeline forecasting), and Terret Conversation Intelligence (call analysis).
+  For developers, Boostup exposes a public REST data-export API at
+  app.boostup.ai/export that lets customers programmatically pull their
+  Opportunities, Accounts, and Forecast Submissions out of the platform for
+  in-house analysis and reporting. The API is authenticated with API keys passed
+  in the Authorization header, returns JSON paginated in batches of up to 1000
+  records, and supports date-based filtering on close/create/update times. The
+  company was surfaced as a portfolio company of Canaan Partners.
 url: https://raw.githubusercontent.com/api-evangelist/boostup/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - canaan-partners
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
+x-rebrand: Terret (terret.ai) — formerly BoostUp.ai; API host remains app.boostup.ai
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://terret.ai/images/nexus-og-logo-only.jpg
 tags:
 - Company
-apis: []
+- Revenue Intelligence
+- Sales
+- Forecasting
+- Analytics
+- RevOps
+- Conversation Intelligence
+- Data Export
+- CRM
+apis:
+- aid: boostup:boostup-export-api
+  name: Boostup Export API
+  description: The Export API from Boostup — 3 operation(s) for export.
+  humanURL: https://app.boostup.ai/export/docs/
+  baseURL: https://app.boostup.ai/export
+  tags:
+  - Export
+  properties:
+  - type: OpenAPI
+    url: openapi/boostup-export-api-openapi.yml
+  - type: Documentation
+    url: https://app.boostup.ai/export/docs/
+  - type: APIReference
+    url: https://app.boostup.ai/export/docs/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: Arazzo
+  url: arazzo/boostup-export-all-revenue-data.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  url: overlays/boostup-export-overlay.yaml
+- type: LLMsTxt
+  url: llms/boostup-llms.txt
+- type: MCPServer
+  url: mcp/boostup-mcp.yml
+- type: DataModel
+  url: data-model/boostup-data-model.yml
+- type: Conventions
+  url: conventions/boostup-conventions.yml
+- type: Lifecycle
+  url: lifecycle/boostup-lifecycle.yml
+- type: Conformance
+  url: conformance/boostup-conformance.yml
+- type: ErrorCatalog
+  url: errors/boostup-problem-types.yml
+- type: AgenticAccess
+  url: agentic-access/boostup-agentic-access.yml
+- type: TrustCenter
+  url: security/boostup-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/boostup-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/boostup-domain-security.yml
+- type: Authentication
+  url: authentication/boostup-authentication.yml
+- type: Website
+  url: https://www.terret.ai/
+- type: Blog
+  url: https://www.terret.ai/blogs
+- type: Documentation
+  url: https://app.boostup.ai/export/docs/
+- type: APIReference
+  url: https://app.boostup.ai/export/docs/
+- type: SignUp
+  url: https://app.boostup.ai/login
+- type: Login
+  url: https://app.boostup.ai/login
+- type: Support
+  url: https://support.boostup.ai/hc/en-us
+- type: TermsOfService
+  url: https://www.terret.ai/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://www.terret.ai/privacy-policy/
+- type: StatusPage
+  url: https://status.boostup.ai/
+- type: Compliance
+  url: https://www.terret.ai/security
+- type: TrustCenter
+  url: https://www.terret.ai/security
+- type: Security
+  url: https://www.terret.ai/vulnerability-disclosure-policy/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

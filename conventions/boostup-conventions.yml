@@ -1,0 +1,49 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  openapi/boostup-openapi-original.json + https://app.boostup.ai/export/docs/
+authentication:
+  style: api-key
+  location: header
+  parameter: Authorization
+  notes: >-
+    API key passed verbatim in the Authorization header (no Bearer prefix
+    documented). Keys minted in the API Key Service portal at
+    /settings/external-api-token. A key created by a user is deactivated when
+    that user is deactivated. See authentication/boostup-authentication.yml.
+pagination:
+  style: limit-skip
+  params:
+    limit: required integer, max page size 1000
+    skip: required integer offset
+  response: batches of up to 1000 JSON records per request
+  notes: limit and skip are required on every export filter body.
+filtering:
+  style: date-range
+  fields:
+    - created_date (start_date required, end_date optional)
+    - closed_date (opportunities only)
+    - updated_at
+  plus:
+    opportunity: []
+    account: [email_domain, account_id]
+    forecast_submission: [submission_type, business_type, forecast_name, year, quarter, month, week, period_type, user]
+idempotency:
+  supported: false
+  notes: >-
+    All three endpoints are read-only data exports (POST is used to carry the
+    filter body, not to mutate state); there is no idempotency-key contract.
+request_tracing:
+  request_id_header: null
+  notes: none documented
+versioning:
+  notes: see lifecycle/boostup-lifecycle.yml
+error_envelope:
+  shape: JSON object with `detail` (string for 401/403/429; array for 422)
+  reference: errors/boostup-problem-types.yml
+rate_limiting:
+  signalled_by: HTTP 429 Too Many Requests
+  headers: none documented
+  notes: >-
+    A 429 response indicates the rate limit was exceeded; specific quota numbers
+    and Retry-After/RateLimit headers are not published.

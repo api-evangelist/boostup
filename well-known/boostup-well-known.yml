@@ -1,0 +1,42 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of app.boostup.ai and boostup.ai /.well-known/*
+note: >-
+  No authoritative /.well-known/ documents were found. app.boostup.ai and
+  boostup.ai return an HTTP 200 SPA/marketing HTML shell (text/html) for every
+  /.well-known/ path (catch-all), so security.txt, openid-configuration,
+  oauth-authorization-server, api-catalog, and ai-plugin.json are all false
+  positives, not real discovery documents. No WellKnown/SecurityTxt pointer is
+  wired. The real machine-readable surface is the OpenAPI at
+  https://app.boostup.ai/export/openapi.json.
+hosts:
+- host: https://app.boostup.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    real: false
+    content_type: text/html
+    note: SPA catch-all, not RFC 9116
+  - path: /.well-known/openid-configuration
+    status: 200
+    real: false
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real: false
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 200
+    real: false
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    real: false
+    content_type: text/html
+- host: https://boostup.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    real: false
+    content_type: text/html
+    note: redirects to terret.ai marketing SPA

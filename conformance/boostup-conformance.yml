@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  openapi/boostup-openapi-original.json + https://www.terret.ai/security
+standards:
+- id: openapi-3.1
+  conforms: true
+  evidence: openapi field is 3.1.0
+- id: apikey-auth
+  conforms: true
+  evidence: components.securitySchemes APIKeyHeader (apiKey in header, Authorization)
+- id: oauth2
+  conforms: false
+  evidence: no oauth2 security scheme; API-key auth only
+- id: openidconnect
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors use a plain JSON {detail} envelope, not application/problem+json
+- id: pagination
+  conforms: true
+  evidence: every export filter requires limit + skip; responses paginated in batches of max 1000
+- id: idempotency
+  conforms: false
+  evidence: read-only export endpoints; no idempotency-key contract
+- id: soc2-type2
+  conforms: true
+  evidence: security page states SOC 2 Type 2 compliant since 2020
+- id: csa-star-level-1
+  conforms: true
+  evidence: security page lists CSA STAR Level 1
+- id: fips-140-2
+  conforms: true
+  evidence: security page states AES-256 encryption (FIPS 140-2 validated)
+- id: iso-27001
+  conforms: false
+  evidence: not named on the security page
+- id: gdpr
+  conforms: false
+  evidence: not named on the security page

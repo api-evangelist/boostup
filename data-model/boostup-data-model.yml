@@ -1,0 +1,42 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/boostup-openapi-original.json
+entities:
+- name: Opportunity
+  schema: ExportOpportunityResponse
+  export_operation: openapi/boostup-openapi-original.json#export_opportunity_export_opportunity_post
+  key_fields: [account, account_name, user, user_name, risk_score, progression_risk_score, updated_at]
+  embedded: [ExportLastActivity, ExportLastEvent, ExportNextEvent, ExportCRMMetaDataOpportunity]
+- name: Account
+  schema: ExportAccountResponse
+  export_operation: openapi/boostup-openapi-original.json#export_account_export_account_post
+  key_fields: [email_domain, additional_email_domains, user, updated_at]
+  embedded: [ExportLastActivity, ExportLastEvent, ExportNextEvent, ExportCRMMetaDataAccount]
+- name: ForecastSubmission
+  schema: ExportForecastSubmissionResponse
+  export_operation: openapi/boostup-openapi-original.json#export_forecast_submission_export_forecast_submission_post
+  key_fields: [forecast_name, period_type, year, quarter, month, week, amount, submission_type, user]
+  embedded: [SubmittedOpportunity]
+relationships:
+- from: Opportunity
+  to: Account
+  type: belongs_to
+  via: account
+  notes: Opportunity.account / account_name reference the owning Account.
+- from: ForecastSubmission
+  to: Opportunity
+  type: has_many
+  via: included_deals / excluded_deals (SubmittedOpportunity.opportunity_id)
+  notes: A forecast submission bundles the opportunities included in and excluded from the forecast number.
+- from: Opportunity
+  to: User
+  type: belongs_to
+  via: user / user_name
+- from: Account
+  to: User
+  type: belongs_to
+  via: user
+notes: >-
+  No stable id-prefix scheme is published; identifiers (account, user,
+  opportunity_id) are opaque strings sourced from the customer CRM
+  (crm_metadata carries the CRM linkage).

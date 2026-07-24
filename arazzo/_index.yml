@@ -1,0 +1,7 @@
+generated: '2026-07-18'
+method: derived
+workflows:
+- file: boostup-export-all-revenue-data.yml
+  workflowId: export-all-revenue-data
+  title: Export all Boostup revenue data
+  summary: Export Opportunities, Accounts, and Forecast Submissions in one run.

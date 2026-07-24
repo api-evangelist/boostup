@@ -1,0 +1,63 @@
+arazzo: 1.0.1
+info:
+  title: Export all Boostup revenue data
+  version: 1.0.0
+  summary: >-
+    Pull the first page of Opportunities, Accounts, and Forecast Submissions out
+    of the Boostup / Terret Export API in one run, ready to page through with
+    limit/skip.
+sourceDescriptions:
+- name: boostup
+  url: ../openapi/boostup-openapi-original.json
+  type: openapi
+workflows:
+- workflowId: export-all-revenue-data
+  summary: Export Opportunities, Accounts, and Forecast Submissions.
+  description: >-
+    Runs the three read-only export endpoints with a shared page size. Auth is
+    the API key sent in the Authorization header. Increment skip by page_size to
+    page through each collection.
+  inputs:
+    type: object
+    properties:
+      page_size:
+        type: integer
+        default: 1000
+      skip:
+        type: integer
+        default: 0
+      start_date:
+        type: string
+        description: ISO date; lower bound for updated_at filters.
+  steps:
+  - stepId: export-opportunities
+    operationId: export_opportunity_export_opportunity_post
+    requestBody:
+      contentType: application/json
+      payload:
+        limit: $inputs.page_size
+        skip: $inputs.skip
+        updated_at:
+          start_date: $inputs.start_date
+    successCriteria:
+    - condition: $statusCode == 200
+  - stepId: export-accounts
+    operationId: export_account_export_account_post
+    requestBody:
+      contentType: application/json
+      payload:
+        limit: $inputs.page_size
+        skip: $inputs.skip
+        updated_at:
+          start_date: $inputs.start_date
+    successCriteria:
+    - condition: $statusCode == 200
+  - stepId: export-forecast-submissions
+    operationId: export_forecast_submission_export_forecast_submission_post
+    requestBody:
+      contentType: application/json
+      payload:
+        limit: $inputs.page_size
+        skip: $inputs.skip
+    successCriteria:
+    - condition: $statusCode == 200

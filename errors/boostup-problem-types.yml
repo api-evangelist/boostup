@@ -1,0 +1,54 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/boostup-openapi-original.json
+format: json
+envelope:
+  field: detail
+  description: >-
+    Errors are returned as a JSON object. 401/403/429 responses use the
+    ExceptionSchema shape with a single string `detail` message. 422 validation
+    errors use HTTPValidationError with `detail` as an array of ValidationError
+    objects (loc, msg, type). Not RFC 9457 problem+json.
+problems:
+- status: 401
+  title: Unauthorized
+  schema: ExceptionSchema
+  remediation: >-
+    Provide a valid API key in the Authorization header. Keys are created in the
+    API Key Service portal at /settings/external-api-token. Keys tied to a
+    deactivated user stop working.
+  source_operations:
+  - openapi/boostup-openapi-original.json#export_opportunity_export_opportunity_post
+  - openapi/boostup-openapi-original.json#export_account_export_account_post
+  - openapi/boostup-openapi-original.json#export_forecast_submission_export_forecast_submission_post
+- status: 403
+  title: Forbidden
+  schema: ExceptionSchema
+  remediation: >-
+    The authenticated key lacks access to the requested export service. Ask your
+    CSM to grant API access for the specific export (Opportunity/Account/Forecast).
+  source_operations:
+  - openapi/boostup-openapi-original.json#export_opportunity_export_opportunity_post
+  - openapi/boostup-openapi-original.json#export_account_export_account_post
+  - openapi/boostup-openapi-original.json#export_forecast_submission_export_forecast_submission_post
+- status: 429
+  title: Too Many Requests
+  schema: ExceptionSchema
+  remediation: >-
+    Rate limit exceeded. Back off and retry; paginate with limit/skip rather
+    than requesting large windows at once.
+  source_operations:
+  - openapi/boostup-openapi-original.json#export_opportunity_export_opportunity_post
+  - openapi/boostup-openapi-original.json#export_account_export_account_post
+  - openapi/boostup-openapi-original.json#export_forecast_submission_export_forecast_submission_post
+- status: 422
+  title: Validation Error
+  schema: HTTPValidationError
+  remediation: >-
+    Request body failed validation. Inspect detail[].loc / detail[].msg to find
+    the offending field. limit and skip are required on every export filter;
+    date filters require start_date.
+  source_operations:
+  - openapi/boostup-openapi-original.json#export_opportunity_export_opportunity_post
+  - openapi/boostup-openapi-original.json#export_account_export_account_post
+  - openapi/boostup-openapi-original.json#export_forecast_submission_export_forecast_submission_post

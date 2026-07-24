@@ -1,0 +1,40 @@
+# Boostup (Terret)
+
+> Boostup — now operating as Terret (terret.ai) — is an AI-powered revenue
+> intelligence platform for sales forecasting, pipeline analysis, and
+> conversation intelligence. Its public REST Export API lets customers pull
+> their Opportunities, Accounts, and Forecast Submissions out of the platform
+> as JSON for in-house analysis and reporting. Auth is an API key in the
+> Authorization header; responses are paginated (limit/skip, max 1000 per page)
+> and filterable by date.
+
+## API
+
+- [Boostup Export API docs](https://app.boostup.ai/export/docs/): Interactive OpenAPI reference for the three export endpoints.
+- [OpenAPI specification](https://app.boostup.ai/export/openapi.json): OpenAPI 3.1.0 (Boostup API 0.1.0), base path /export.
+- [API key portal](https://app.boostup.ai/settings/external-api-token): Create and manage API keys (Authorization header).
+
+## Endpoints
+
+- POST /export/opportunity — Export Opportunities (filter by created/closed/updated date).
+- POST /export/account — Export Accounts (filter by created/updated date, email_domain, account_id).
+- POST /export/forecast_submission — Export Forecast Submissions (filter by period/type/user).
+
+## Specs & artifacts
+
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/boostup/refs/heads/main/authentication/boostup-authentication.yml)
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/boostup/refs/heads/main/errors/boostup-problem-types.yml)
+- [Conventions (auth/pagination/filtering)](https://raw.githubusercontent.com/api-evangelist/boostup/refs/heads/main/conventions/boostup-conventions.yml)
+- [Data model](https://raw.githubusercontent.com/api-evangelist/boostup/refs/heads/main/data-model/boostup-data-model.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/boostup/refs/heads/main/lifecycle/boostup-lifecycle.yml)
+
+## Docs
+
+- [Terret website](https://www.terret.ai/): Products — Nexus, Forecast, Conversation Intelligence.
+- [Blog](https://www.terret.ai/blogs)
+- [Support center](https://support.boostup.ai/hc/en-us)
+- [Status page](https://status.boostup.ai/)
+- [Security & compliance](https://www.terret.ai/security): SOC 2 Type 2, CSA STAR Level 1, AES-256/FIPS 140-2.
+- [Vulnerability disclosure policy](https://www.terret.ai/vulnerability-disclosure-policy/): security@terret.ai.
+- [Terms & Conditions](https://www.terret.ai/terms-and-conditions/)
+- [Privacy Policy](https://www.terret.ai/privacy-policy/)

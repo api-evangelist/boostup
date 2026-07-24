@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/boostup-openapi-original.json
+notes: >-
+  No official hosted/remote MCP server was found for Boostup / Terret (checked
+  docs, npm @modelcontextprotocol, MCP registries). Tools below are a CANDIDATE
+  surface derived one-per-operation from the export OpenAPI; auth is the same API
+  key passed in the Authorization header.
+server:
+  name: boostup
+  transport: http
+  url: null
+tools:
+- name: export_opportunity
+  description: Export Opportunities (filter by created/closed/updated date, paginated with limit/skip).
+  source_operation: openapi/boostup-openapi-original.json#export_opportunity_export_opportunity_post
+- name: export_account
+  description: Export Accounts (filter by created/updated date, email_domain, account_id; paginated).
+  source_operation: openapi/boostup-openapi-original.json#export_account_export_account_post
+- name: export_forecast_submission
+  description: Export Forecast Submissions (filter by period/type/user; paginated).
+  source_operation: openapi/boostup-openapi-original.json#export_forecast_submission_export_forecast_submission_post

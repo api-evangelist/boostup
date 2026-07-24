@@ -1,0 +1,14 @@
+{
+  "provider": "boostup",
+  "sources": [
+    "boostup-export-api-openapi.yml"
+  ],
+  "outputs": [
+    "boostup-export-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

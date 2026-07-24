@@ -1,0 +1,10 @@
+generated: '2026-07-18'
+method: generated
+skills:
+- file: boostup-export-revenue-data.md
+  name: Export Boostup revenue data
+  api: openapi/boostup-openapi-original.json
+  operations:
+  - export_opportunity_export_opportunity_post
+  - export_account_export_account_post
+  - export_forecast_submission_export_forecast_submission_post

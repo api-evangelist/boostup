@@ -1,0 +1,14 @@
+generated: '2026-07-18'
+method: searched
+probe: true
+source: https://www.terret.ai/security
+url: https://www.terret.ai/security
+certifications:
+- SOC 2
+- CSA STAR
+- FIPS 140
+evidence:
+- source: https://www.terret.ai/security
+  keywords:
+  - soc 2
+  - csa star
