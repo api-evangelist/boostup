@@ -36,7 +36,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-13'
 image: https://terret.ai/images/nexus-og-logo-only.jpg
 tags:
 - Company
@@ -99,6 +99,12 @@ common:
   url: security/boostup-domain-security.yml
 - type: Authentication
   url: authentication/boostup-authentication.yml
+- type: Packages
+  url: packages/boostup-packages.yml
+- type: Plans
+  url: plans/boostup-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/boostup-rate-limits.yml
 - type: Website
   url: https://www.terret.ai/
 - type: Blog
@@ -126,7 +132,14 @@ common:
 - type: Security
   url: https://www.terret.ai/vulnerability-disclosure-policy/
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 3
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  note: >-
+    Contract discovery re-run — the Export API OpenAPI 3.1.0 is live and
+    unchanged at https://app.boostup.ai/export/openapi.json (3 operations, 18
+    schemas, info.version 0.1.0). Added packages/, plans/ and rate-limits/;
+    refreshed well-known/ (A2A + MCP probes folded in) and lifecycle/ (status
+    page API + components). No A2A agent card, no MCP server, no AsyncAPI, no
+    SDK, no published pricing and no published rate limits.
