@@ -1,0 +1,50 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://app.boostup.ai/export/openapi.json + https://app.boostup.ai/export/docs/
+  + https://support.boostup.ai/hc/en-us (67 help-center articles searched)
+limit_count: 0
+documented: false
+note: >-
+  Boostup / Terret publishes NO numeric rate limits. The Export API contract does
+  declare exhaustion behaviour — every one of the three operations documents a
+  429 "Too Many Requests" response carrying the ExceptionSchema `{detail: string}`
+  envelope — but no quota, window, burst, or scope is stated anywhere, and no
+  rate-limit response headers are documented. A full-text sweep of all 67
+  published Zendesk help-center articles found no occurrence of "rate limit".
+  The only throughput control the provider actually publishes is the page-size
+  ceiling on the export filter body: `limit` is capped at 1000 records per
+  request and `skip` is required, so a consumer paginates rather than requesting
+  a large window at once.
+  An agent calling this API therefore has a status-code signal (429) and no
+  runtime header signal — it must back off blindly.
+limits: []
+exhaustion:
+  status_code: 429
+  reason_phrase: Too Many Requests
+  body: '{"detail": "<string>"}'
+  schema: ExceptionSchema
+  source_operations:
+  - openapi/boostup-export-api-openapi.yml#export_opportunity_export_opportunity_post
+  - openapi/boostup-export-api-openapi.yml#export_account_export_account_post
+  - openapi/boostup-export-api-openapi.yml#export_forecast_submission_export_forecast_submission_post
+headers:
+  ratelimit_standard: null
+  x_ratelimit: null
+  retry_after: null
+  note: none documented and none observable anonymously (all operations require an API key)
+pagination_ceiling:
+  param: limit
+  maximum: 1000
+  minimum: 1
+  offset_param: skip
+  note: >-
+    Enforced in the request schema (ExportOpportunityFilter / ExportAccountFilter /
+    ExportForecastSubmissionFilter); a value above 1000 fails with 422.
+evidence:
+- url: https://app.boostup.ai/export/openapi.json
+  status: 200
+  finding: 429 response declared on all 3 operations; limit max 1000; no headers
+- url: https://support.boostup.ai/api/v2/help_center/en-us/articles.json?per_page=100
+  status: 200
+  finding: 67 articles, zero matches for "rate limit" / "ratelimit"

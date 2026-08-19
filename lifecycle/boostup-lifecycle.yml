@@ -1,19 +1,65 @@
-generated: '2026-07-18'
+generated: '2026-08-13'
 method: searched
 source: >-
-  openapi/boostup-openapi-original.json + https://status.boostup.ai/
+  https://app.boostup.ai/export/openapi.json + https://status.boostup.ai/ +
+  https://status.boostup.ai/api/v2/components.json
 versioning:
   scheme: openapi-info-version
   current: '0.1.0'
   notes: >-
-    OpenAPI info.version is 0.1.0. No URI/header API version segment; the export
-    base path is /export. No dated versioning policy published.
+    OpenAPI info.version is 0.1.0 and unchanged between the 2026-07-18 and
+    2026-08-13 harvests. No URI or header API version segment; the export base
+    path is /export. No dated versioning policy published.
 deprecation:
   policy_url: null
   sunset_header: false
-  notes: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+  notes: >-
+    No published deprecation policy and no RFC 8594 Sunset/Deprecation header
+    support found. No Deprecation pointer is wired in apis.yml.
 sla:
   url: null
   uptime_target: null
+  notes: >-
+    No SLA or uptime target is published. The status page shows per-component
+    uptime history but states no commitment.
 status_page: https://status.boostup.ai/
+status_page_details:
+  platform: Atlassian Statuspage
+  page_id: 6xw83dkc55qd
+  machine_readable: true
+  api:
+  - url: https://status.boostup.ai/api/v2/status.json
+    status: 200
+  - url: https://status.boostup.ai/api/v2/summary.json
+    status: 200
+  - url: https://status.boostup.ai/api/v2/components.json
+    status: 200
+  - url: https://status.boostup.ai/history.rss
+    status: 200
+  components:
+  - name: app.boostup.ai API - Status
+    description: API Uptime.
+    tracked_since: '2021-10-01'
+  - name: Boostup.ai Console, Management and Portal - Status
+    description: Console Uptime.
+    tracked_since: '2022-04-01'
+  - name: Main Infrastructure Service - Cloud
+  - name: Data Storage Service - Cloud
+  - name: Network Services - Cloud
+  - name: Pipelines and Workflows Service - CI/CD
+  - name: Systems Monitoring and Analytics Service - Observability
+  notes: >-
+    The API itself is a named, separately tracked status component
+    ("app.boostup.ai API - Status", history from 2021-10-01), which is stronger
+    than a generic platform status page. The incident feed, however, still
+    contains only Statuspage's shipped placeholder ("This is an example
+    incident"), so no real incident history has been published.
+changelog:
+  published: false
+  notes: >-
+    No changelog, release-notes page, or /changelog path exists on terret.ai
+    (404), and the 240-URL sitemap contains none. Product updates appear only as
+    occasional dated help-center articles (e.g. "CALL AI and Agents Enhancements
+    - 10/23/2025"), which is not a changelog surface — no changelog/ artifact was
+    authored and no ChangeLog pointer is wired.
 deprecated_operations: []

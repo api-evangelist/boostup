@@ -1,0 +1,67 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm registry search + registry metadata (registry.npmjs.org), PyPI, RubyGems,
+  crates.io, NuGet, Packagist, pkg.go.dev, plus the Boostup Export API docs at
+  https://app.boostup.ai/export/docs/
+note: >-
+  Boostup / Terret publishes NO first-party client SDK for the Export API. The
+  API docs at https://app.boostup.ai/export/docs/ document raw HTTP with an API
+  key in the Authorization header and link to no client library in any language.
+  A registry sweep found exactly one package published from a boostup.ai email
+  address — boostup-ui-library — and it is an internal React UI component
+  library, not an API client. It has not been republished since 2022-12-17,
+  which is the only provider-published, dated decay signal available for this
+  company.
+sdk_count: 0
+package_count: 1
+packages:
+- language: javascript
+  registry: npm
+  name: boostup-ui-library
+  url: https://www.npmjs.com/package/boostup-ui-library
+  install: npm install boostup-ui-library
+  official: true
+  api_client: false
+  version: 1.0.0
+  published: '2022-12-17'
+  license: ISC
+  repository: https://github.com/Vocalo/ui-library
+  maintainer: luciano.buszmicz@boostup.ai
+  description: Boostup UI components library
+  note: >-
+    First-party by publisher identity — the sole npm maintainer is
+    luciano-boostup <luciano.buszmicz@boostup.ai>, an address on the company's
+    own domain, and the package description names Boostup. It is a React UI
+    component library used inside the product, NOT a client for the Export API,
+    so it does not count toward sdk_count and no SDKs pointer is emitted. Still
+    at its first release (1.0.0) since 2022-12-17. The linked repository lives
+    under the GitHub org `Vocalo` (private repos; the org's public repos are all
+    forks of Celery/RabbitMQ/Snowflake/CometD infrastructure tooling, matching
+    Boostup's stack) — a strong lead that Vocalo is Boostup's engineering org,
+    but the org does not self-identify as Boostup, so no GitHubOrganization
+    pointer is claimed on that inference alone.
+registries_checked:
+- registry: npm
+  query: boostup, terret, maintainer:luciano-boostup
+  result: 1 first-party package (boostup-ui-library); @boostup/* scope belongs to
+    an unrelated individual (boostup@gmail.com / github.com/boostup "Fred B.")
+- registry: pypi
+  query: boostup, terret
+  result: 404 — no package
+- registry: rubygems
+  query: boostup
+  result: 404 — no gem
+- registry: crates.io
+  query: boostup
+  result: 0 crates
+- registry: nuget
+  query: boostup, terret
+  result: 0 hits
+- registry: packagist
+  query: boostup
+  result: 0 first-party hits (only unrelated packages whose descriptions contain
+    the phrase "boost up")
+- registry: go-modules
+  query: github.com/boostup
+  result: 404 — not a valid module path

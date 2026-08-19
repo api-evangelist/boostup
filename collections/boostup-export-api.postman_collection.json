@@ -1,0 +1,1007 @@
+{
+  "item": [
+    {
+      "id": "6130e171-516d-4d99-b89a-cc12de291069",
+      "name": "Export",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8083bd43-a474-4e49-94fc-31c864533312",
+          "name": "Export Opportunity",
+          "request": {
+            "name": "Export Opportunity",
+            "description": {
+              "content": "Exports opportunities",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "export",
+                "opportunity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"<dateTime>\",\n    \"end_date\": \"<dateTime>\"\n  },\n  \"closed_date\": {\n    \"start_date\": \"<dateTime>\",\n    \"end_date\": \"<dateTime>\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"<dateTime>\",\n    \"end_date\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3bc07522-81ba-451a-832a-844ae534de0d",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "opportunity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1981-10-14T03:50:35.245Z\",\n    \"end_date\": \"1968-06-21T19:26:11.901Z\"\n  },\n  \"closed_date\": {\n    \"start_date\": \"1949-10-27T16:51:13.705Z\",\n    \"end_date\": \"1953-09-17T16:42:55.569Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1995-11-19T06:30:25.674Z\",\n    \"end_date\": \"2002-08-09T22:05:59.161Z\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"crm_metadata\": {\n      \"close_date\": \"string\",\n      \"created_at\": \"2026-07-18T17:41:55.181883+00:00\",\n      \"opportunity_id\": \"string\",\n      \"opportunity_name\": \"string\",\n      \"opportunity_stage\": \"string\",\n      \"opportunity_closed\": false,\n      \"opportunity_won\": false,\n      \"currency\": \"string\",\n      \"next_step\": \"string\",\n      \"forecast_category_name\": \"string\",\n      \"opportunity_type\": \"string\",\n      \"probability\": 5192.422000017916,\n      \"additional_fields\": [\n        {\n          \"field\": \"string\",\n          \"value\": {},\n          \"display_name\": \"string\"\n        },\n        {\n          \"field\": \"string\",\n          \"value\": {},\n          \"display_name\": \"string\"\n        }\n      ],\n      \"last_sync\": \"2026-07-18T17:41:55.182126+00:00\"\n    },\n    \"progression_risk_score\": 6777,\n    \"risk_score\": 9609,\n    \"last_touched\": \"2026-07-18T17:41:55.180257+00:00\",\n    \"last_engaged\": \"2026-07-18T17:41:55.180298+00:00\",\n    \"contacts_touched\": 0,\n    \"contacts_engaged\": 0,\n    \"last_activity\": {\n      \"activity_type\": \"string\",\n      \"occurred_at\": \"2026-07-18T17:41:55.181779+00:00\",\n      \"resource_id\": \"string\",\n      \"text\": \"string\"\n    },\n    \"last_event\": {\n      \"event\": \"string\",\n      \"occurred_at\": \"2026-07-18T17:41:55.181345+00:00\"\n    },\n    \"events_count\": 0,\n    \"next_event\": {\n      \"event\": \"string\",\n      \"start\": \"2026-07-18T17:41:55.182875+00:00\"\n    },\n    \"account_owner_emails_count\": 0,\n    \"seller_emails_count\": 0,\n    \"buyer_emails_count\": 0,\n    \"seller_time_spent\": 0,\n    \"account\": \"string\",\n    \"account_name\": \"string\",\n    \"updated_at\": \"2026-07-18T17:41:55.181090+00:00\",\n    \"user_name\": \"string\",\n    \"last_update\": \"2026-07-18T17:41:55.181145+00:00\",\n    \"risk_factors\": [\n      {\n        \"name\": \"string\",\n        \"category\": \"string\",\n        \"score\": 285,\n        \"text\": \"string\",\n        \"updated_at\": \"2026-07-18T17:41:55.181261+00:00\"\n      },\n      {\n        \"name\": \"string\",\n        \"category\": \"string\",\n        \"score\": 7580,\n        \"text\": \"string\",\n        \"updated_at\": \"2026-07-18T17:41:55.181261+00:00\"\n      }\n    ],\n    \"user\": \"string\"\n  },\n  {\n    \"crm_metadata\": {\n      \"close_date\": \"string\",\n      \"created_at\": \"2026-07-18T17:41:55.181883+00:00\",\n      \"opportunity_id\": \"string\",\n      \"opportunity_name\": \"string\",\n      \"opportunity_stage\": \"string\",\n      \"opportunity_closed\": true,\n      \"opportunity_won\": false,\n      \"currency\": \"string\",\n      \"next_step\": \"string\",\n      \"forecast_category_name\": \"string\",\n      \"opportunity_type\": \"string\",\n      \"probability\": 6666.738337942415,\n      \"additional_fields\": [\n        {\n          \"field\": \"string\",\n          \"value\": {},\n          \"display_name\": \"string\"\n        },\n        {\n          \"field\": \"string\",\n          \"value\": {},\n          \"display_name\": \"string\"\n        }\n      ],\n      \"last_sync\": \"2026-07-18T17:41:55.182126+00:00\"\n    },\n    \"progression_risk_score\": 718,\n    \"risk_score\": 2544,\n    \"last_touched\": \"2026-07-18T17:41:55.180257+00:00\",\n    \"last_engaged\": \"2026-07-18T17:41:55.180298+00:00\",\n    \"contacts_touched\": 0,\n    \"contacts_engaged\": 0,\n    \"last_activity\": {\n      \"activity_type\": \"string\",\n      \"occurred_at\": \"2026-07-18T17:41:55.181779+00:00\",\n      \"resource_id\": \"string\",\n      \"text\": \"string\"\n    },\n    \"last_event\": {\n      \"event\": \"string\",\n      \"occurred_at\": \"2026-07-18T17:41:55.181345+00:00\"\n    },\n    \"events_count\": 0,\n    \"next_event\": {\n      \"event\": \"string\",\n      \"start\": \"2026-07-18T17:41:55.182875+00:00\"\n    },\n    \"account_owner_emails_count\": 0,\n    \"seller_emails_count\": 0,\n    \"buyer_emails_count\": 0,\n    \"seller_time_spent\": 0,\n    \"account\": \"string\",\n    \"account_name\": \"string\",\n    \"updated_at\": \"2026-07-18T17:41:55.181090+00:00\",\n    \"user_name\": \"string\",\n    \"last_update\": \"2026-07-18T17:41:55.181145+00:00\",\n    \"risk_factors\": [\n      {\n        \"name\": \"string\",\n        \"category\": \"string\",\n        \"score\": 5116,\n        \"text\": \"string\",\n        \"updated_at\": \"2026-07-18T17:41:55.181261+00:00\"\n      },\n      {\n        \"name\": \"string\",\n        \"category\": \"string\",\n        \"score\": 9765,\n        \"text\": \"string\",\n        \"updated_at\": \"2026-07-18T17:41:55.181261+00:00\"\n      }\n    ],\n    \"user\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5711b0c7-10b8-4a8d-b64d-181b9381f727",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "opportunity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1981-10-14T03:50:35.245Z\",\n    \"end_date\": \"1968-06-21T19:26:11.901Z\"\n  },\n  \"closed_date\": {\n    \"start_date\": \"1949-10-27T16:51:13.705Z\",\n    \"end_date\": \"1953-09-17T16:42:55.569Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1995-11-19T06:30:25.674Z\",\n    \"end_date\": \"2002-08-09T22:05:59.161Z\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fac5213c-51f2-401c-a017-d16c219ff6bf",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "opportunity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1981-10-14T03:50:35.245Z\",\n    \"end_date\": \"1968-06-21T19:26:11.901Z\"\n  },\n  \"closed_date\": {\n    \"start_date\": \"1949-10-27T16:51:13.705Z\",\n    \"end_date\": \"1953-09-17T16:42:55.569Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1995-11-19T06:30:25.674Z\",\n    \"end_date\": \"2002-08-09T22:05:59.161Z\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c501636a-bd28-4dc4-b800-13c88ae37f80",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "opportunity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1981-10-14T03:50:35.245Z\",\n    \"end_date\": \"1968-06-21T19:26:11.901Z\"\n  },\n  \"closed_date\": {\n    \"start_date\": \"1949-10-27T16:51:13.705Z\",\n    \"end_date\": \"1953-09-17T16:42:55.569Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1995-11-19T06:30:25.674Z\",\n    \"end_date\": \"2002-08-09T22:05:59.161Z\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5f79132-9c29-4273-812c-d32a659f431d",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "opportunity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1981-10-14T03:50:35.245Z\",\n    \"end_date\": \"1968-06-21T19:26:11.901Z\"\n  },\n  \"closed_date\": {\n    \"start_date\": \"1949-10-27T16:51:13.705Z\",\n    \"end_date\": \"1953-09-17T16:42:55.569Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1995-11-19T06:30:25.674Z\",\n    \"end_date\": \"2002-08-09T22:05:59.161Z\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7c8beb9-239e-4f15-a102-c5cfa14019c4",
+          "name": "Export Account",
+          "request": {
+            "name": "Export Account",
+            "description": {
+              "content": "Exports accounts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "export",
+                "account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"<dateTime>\",\n    \"end_date\": \"<dateTime>\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"<dateTime>\",\n    \"end_date\": \"<dateTime>\"\n  },\n  \"email_domain\": \"<string>\",\n  \"account_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a8708420-1554-47a9-8de7-06a3b16ab500",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1956-08-27T19:25:10.670Z\",\n    \"end_date\": \"2008-12-02T06:25:49.214Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1966-01-14T04:12:27.165Z\",\n    \"end_date\": \"1986-11-07T12:30:02.193Z\"\n  },\n  \"email_domain\": \"<string>\",\n  \"account_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"crm_metadata\": {\n      \"created_at\": \"2026-07-18T17:41:55.182924+00:00\",\n      \"account_id\": \"string\",\n      \"account_name\": \"string\",\n      \"additional_fields\": [\n        {\n          \"field\": \"string\",\n          \"value\": {},\n          \"display_name\": \"string\"\n        },\n        {\n          \"field\": \"string\",\n          \"value\": {},\n          \"display_name\": \"string\"\n        }\n      ],\n      \"last_sync\": \"2026-07-18T17:41:55.183049+00:00\"\n    },\n    \"last_touched\": \"2026-07-18T17:41:55.179151+00:00\",\n    \"last_engaged\": \"2026-07-18T17:41:55.179203+00:00\",\n    \"contacts_touched\": 0,\n    \"contacts_engaged\": 0,\n    \"last_activity\": {\n      \"activity_type\": \"string\",\n      \"occurred_at\": \"2026-07-18T17:41:55.181779+00:00\",\n      \"resource_id\": \"string\",\n      \"text\": \"string\"\n    },\n    \"last_event\": {\n      \"event\": \"string\",\n      \"occurred_at\": \"2026-07-18T17:41:55.181345+00:00\"\n    },\n    \"events_count\": 0,\n    \"next_event\": {\n      \"event\": \"string\",\n      \"start\": \"2026-07-18T17:41:55.182875+00:00\"\n    },\n    \"account_owner_emails_count\": 0,\n    \"seller_emails_count\": 0,\n    \"buyer_emails_count\": 0,\n    \"seller_time_spent\": 0,\n    \"updated_at\": \"2026-07-18T17:41:55.179887+00:00\",\n    \"additional_email_domains\": [\n      \"string\",\n      \"string\"\n    ],\n    \"email_domain\": \"string\",\n    \"risk_factors\": [\n      {\n        \"name\": \"string\",\n        \"category\": \"string\",\n        \"score\": 2480,\n        \"text\": \"string\",\n        \"updated_at\": \"2026-07-18T17:41:55.181261+00:00\"\n      },\n      {\n        \"name\": \"string\",\n        \"category\": \"string\",\n        \"score\": 332,\n        \"text\": \"string\",\n        \"updated_at\": \"2026-07-18T17:41:55.181261+00:00\"\n      }\n    ],\n    \"user\": \"string\"\n  },\n  {\n    \"crm_metadata\": {\n      \"created_at\": \"2026-07-18T17:41:55.182924+00:00\",\n      \"account_id\": \"string\",\n      \"account_name\": \"string\",\n      \"additional_fields\": [\n        {\n          \"field\": \"string\",\n          \"value\": {},\n          \"display_name\": \"string\"\n        },\n        {\n          \"field\": \"string\",\n          \"value\": {},\n          \"display_name\": \"string\"\n        }\n      ],\n      \"last_sync\": \"2026-07-18T17:41:55.183049+00:00\"\n    },\n    \"last_touched\": \"2026-07-18T17:41:55.179151+00:00\",\n    \"last_engaged\": \"2026-07-18T17:41:55.179203+00:00\",\n    \"contacts_touched\": 0,\n    \"contacts_engaged\": 0,\n    \"last_activity\": {\n      \"activity_type\": \"string\",\n      \"occurred_at\": \"2026-07-18T17:41:55.181779+00:00\",\n      \"resource_id\": \"string\",\n      \"text\": \"string\"\n    },\n    \"last_event\": {\n      \"event\": \"string\",\n      \"occurred_at\": \"2026-07-18T17:41:55.181345+00:00\"\n    },\n    \"events_count\": 0,\n    \"next_event\": {\n      \"event\": \"string\",\n      \"start\": \"2026-07-18T17:41:55.182875+00:00\"\n    },\n    \"account_owner_emails_count\": 0,\n    \"seller_emails_count\": 0,\n    \"buyer_emails_count\": 0,\n    \"seller_time_spent\": 0,\n    \"updated_at\": \"2026-07-18T17:41:55.179887+00:00\",\n    \"additional_email_domains\": [\n      \"string\",\n      \"string\"\n    ],\n    \"email_domain\": \"string\",\n    \"risk_factors\": [\n      {\n        \"name\": \"string\",\n        \"category\": \"string\",\n        \"score\": 7288,\n        \"text\": \"string\",\n        \"updated_at\": \"2026-07-18T17:41:55.181261+00:00\"\n      },\n      {\n        \"name\": \"string\",\n        \"category\": \"string\",\n        \"score\": 9776,\n        \"text\": \"string\",\n        \"updated_at\": \"2026-07-18T17:41:55.181261+00:00\"\n      }\n    ],\n    \"user\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab2de9ff-a683-46dd-a404-e5367d5c1a9d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1956-08-27T19:25:10.670Z\",\n    \"end_date\": \"2008-12-02T06:25:49.214Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1966-01-14T04:12:27.165Z\",\n    \"end_date\": \"1986-11-07T12:30:02.193Z\"\n  },\n  \"email_domain\": \"<string>\",\n  \"account_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe0d23da-3203-44da-b1b3-fb7f5fdbaeba",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1956-08-27T19:25:10.670Z\",\n    \"end_date\": \"2008-12-02T06:25:49.214Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1966-01-14T04:12:27.165Z\",\n    \"end_date\": \"1986-11-07T12:30:02.193Z\"\n  },\n  \"email_domain\": \"<string>\",\n  \"account_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ea071cc-745f-4791-82ac-cc44ff150e75",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1956-08-27T19:25:10.670Z\",\n    \"end_date\": \"2008-12-02T06:25:49.214Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1966-01-14T04:12:27.165Z\",\n    \"end_date\": \"1986-11-07T12:30:02.193Z\"\n  },\n  \"email_domain\": \"<string>\",\n  \"account_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "648dc57a-05dc-4850-aeb3-f99093284799",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1956-08-27T19:25:10.670Z\",\n    \"end_date\": \"2008-12-02T06:25:49.214Z\"\n  },\n  \"updated_at\": {\n    \"start_date\": \"1966-01-14T04:12:27.165Z\",\n    \"end_date\": \"1986-11-07T12:30:02.193Z\"\n  },\n  \"email_domain\": \"<string>\",\n  \"account_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e52d870f-c3f2-4660-aed6-917b478074a8",
+          "name": "Export Forecast Submission",
+          "request": {
+            "name": "Export Forecast Submission",
+            "description": {
+              "content": "Exports forecast submissions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "export",
+                "forecast_submission"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"<dateTime>\",\n    \"end_date\": \"<dateTime>\"\n  },\n  \"submission_type\": \"<string>\",\n  \"business_type\": \"<string>\",\n  \"forecast_name\": \"<string>\",\n  \"year\": \"<integer>\",\n  \"quarter\": \"<integer>\",\n  \"month\": \"<integer>\",\n  \"week\": \"<integer>\",\n  \"period_type\": \"<string>\",\n  \"user\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4e2b4f4e-b519-44f5-a057-6a33d1734a96",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "forecast_submission"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1949-04-18T03:49:17.428Z\",\n    \"end_date\": \"1957-12-16T07:41:34.882Z\"\n  },\n  \"submission_type\": \"<string>\",\n  \"business_type\": \"<string>\",\n  \"forecast_name\": \"<string>\",\n  \"year\": \"<integer>\",\n  \"quarter\": \"<integer>\",\n  \"month\": \"<integer>\",\n  \"week\": \"<integer>\",\n  \"period_type\": \"<string>\",\n  \"user\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"created_at\": \"2026-07-18T17:41:55.182215+00:00\",\n    \"forecast_name\": \"string\",\n    \"period_type\": \"string\",\n    \"year\": 4038,\n    \"amount\": 5966.973303952316,\n    \"submission_type\": \"string\",\n    \"business_type\": \"string\",\n    \"user\": \"string\",\n    \"week\": 8731,\n    \"month\": 9305,\n    \"quarter\": 671,\n    \"notes\": \"string\",\n    \"in_time\": true,\n    \"total_deals\": 8416,\n    \"total_included_deals\": 2849,\n    \"included_deals\": [\n      {\n        \"opportunity_id\": \"string\",\n        \"opportunity_name\": \"string\"\n      },\n      {\n        \"opportunity_id\": \"string\",\n        \"opportunity_name\": \"string\"\n      }\n    ],\n    \"excluded_deals\": [\n      {\n        \"opportunity_id\": \"string\",\n        \"opportunity_name\": \"string\"\n      },\n      {\n        \"opportunity_id\": \"string\",\n        \"opportunity_name\": \"string\"\n      }\n    ]\n  },\n  {\n    \"created_at\": \"2026-07-18T17:41:55.182215+00:00\",\n    \"forecast_name\": \"string\",\n    \"period_type\": \"string\",\n    \"year\": 8323,\n    \"amount\": 4333.371289308362,\n    \"submission_type\": \"string\",\n    \"business_type\": \"string\",\n    \"user\": \"string\",\n    \"week\": 7766,\n    \"month\": 9669,\n    \"quarter\": 5805,\n    \"notes\": \"string\",\n    \"in_time\": true,\n    \"total_deals\": 7409,\n    \"total_included_deals\": 3266,\n    \"included_deals\": [\n      {\n        \"opportunity_id\": \"string\",\n        \"opportunity_name\": \"string\"\n      },\n      {\n        \"opportunity_id\": \"string\",\n        \"opportunity_name\": \"string\"\n      }\n    ],\n    \"excluded_deals\": [\n      {\n        \"opportunity_id\": \"string\",\n        \"opportunity_name\": \"string\"\n      },\n      {\n        \"opportunity_id\": \"string\",\n        \"opportunity_name\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7818e878-2b63-4b7d-8b7a-6105269e3a69",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "forecast_submission"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1949-04-18T03:49:17.428Z\",\n    \"end_date\": \"1957-12-16T07:41:34.882Z\"\n  },\n  \"submission_type\": \"<string>\",\n  \"business_type\": \"<string>\",\n  \"forecast_name\": \"<string>\",\n  \"year\": \"<integer>\",\n  \"quarter\": \"<integer>\",\n  \"month\": \"<integer>\",\n  \"week\": \"<integer>\",\n  \"period_type\": \"<string>\",\n  \"user\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3fd0b2d0-544f-41f0-853f-a2e6e181b2fe",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "forecast_submission"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1949-04-18T03:49:17.428Z\",\n    \"end_date\": \"1957-12-16T07:41:34.882Z\"\n  },\n  \"submission_type\": \"<string>\",\n  \"business_type\": \"<string>\",\n  \"forecast_name\": \"<string>\",\n  \"year\": \"<integer>\",\n  \"quarter\": \"<integer>\",\n  \"month\": \"<integer>\",\n  \"week\": \"<integer>\",\n  \"period_type\": \"<string>\",\n  \"user\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8eb17a73-486a-4807-b4c3-da514669478c",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "forecast_submission"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1949-04-18T03:49:17.428Z\",\n    \"end_date\": \"1957-12-16T07:41:34.882Z\"\n  },\n  \"submission_type\": \"<string>\",\n  \"business_type\": \"<string>\",\n  \"forecast_name\": \"<string>\",\n  \"year\": \"<integer>\",\n  \"quarter\": \"<integer>\",\n  \"month\": \"<integer>\",\n  \"week\": \"<integer>\",\n  \"period_type\": \"<string>\",\n  \"user\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "98ff3684-d9e5-494b-89ae-0d74dfff869d",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "export",
+                    "forecast_submission"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"created_date\": {\n    \"start_date\": \"1949-04-18T03:49:17.428Z\",\n    \"end_date\": \"1957-12-16T07:41:34.882Z\"\n  },\n  \"submission_type\": \"<string>\",\n  \"business_type\": \"<string>\",\n  \"forecast_name\": \"<string>\",\n  \"year\": \"<integer>\",\n  \"quarter\": \"<integer>\",\n  \"month\": \"<integer>\",\n  \"week\": \"<integer>\",\n  \"period_type\": \"<string>\",\n  \"user\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/export",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "346ede75-4742-4fcf-9633-2fdbf82a1408",
+    "name": "Boostup Export API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## BoostUp API\n\nThe Boostup API enables programmatic access to the BoostUp platform. You can\nuse this API to export your revenue data from boostup platform for in house\nanalysis and reporting.\n\n\n## Authentication\n\nBoostup API uses API Keys to authenticate requests. You can create and manage\nyour API keys with the [API Key\nService](/settings/external-api-token) portal from\nBoostup. If you cannot access the API Key generation tool you may not have been\ngranted access. Please reach out to your CSM to gain access.\n\nYou need to pass your API Key in the `Authorization` header for every request.\n\nStore the API key in a secure location as you cannot access it again. If you\ndelete a token, any active integration will break. If you deactivate any user\nthe api key’s created by that user will not be active and any active\nintegrations using that user’s API keys will break.\n\n\n## Exporting Boostup Data\n\nBoostUp API enables you to export your Opportunities, Accounts, and Forecast\nSubmissions from Boostup platform. In order to export your data, you must\nauthenticate your request using the API key for the specific service. You can\ndo this by passing the API Key in the Authorization header. The data returned\nwill be in json format and paginated in batches of maximum size 1000.\n\n\n### Filters\n\nBoostup API supports filters to export part of your data. They work differently\ndepending on the type of data you are exporting.\n\nAll the endpoints are paginated, so you must provide a limit and a skip value.\n\n\n#### Opportunities\n\nEnables you to retrieve Opportunities which can be filtered based on their\nclose date, creation time and last update time.\n\n\n#### Accounts\n\nEnables you to retrieve Accounts which can be filtered based on their creation\ndate and last update time.\n\n\n#### Forecast Submissions\n\nEnables you to retrieve forecast submissions which can be filtered based on\ntheir last update time.\n",
+      "type": "text/plain"
+    }
+  }
+}

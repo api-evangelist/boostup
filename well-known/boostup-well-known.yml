@@ -1,16 +1,25 @@
-generated: '2026-07-18'
+generated: '2026-08-13'
 method: searched
-source: live probes of app.boostup.ai and boostup.ai /.well-known/*
+source: live probes of app.boostup.ai, boostup.ai and www.terret.ai /.well-known/*
+rechecked: '2026-08-13'
+real_document_count: 0
 note: >-
-  No authoritative /.well-known/ documents were found. app.boostup.ai and
-  boostup.ai return an HTTP 200 SPA/marketing HTML shell (text/html) for every
-  /.well-known/ path (catch-all), so security.txt, openid-configuration,
-  oauth-authorization-server, api-catalog, and ai-plugin.json are all false
-  positives, not real discovery documents. No WellKnown/SecurityTxt pointer is
-  wired. The real machine-readable surface is the OpenAPI at
-  https://app.boostup.ai/export/openapi.json.
+  No authoritative /.well-known/ documents exist. Two different negative shapes
+  were observed and both are recorded rather than collapsed:
+  (1) app.boostup.ai returns HTTP 200 with a 3,018-byte text/html SPA shell for
+  EVERY /.well-known/ path — a catch-all, not a document, so security.txt,
+  openid-configuration, oauth-authorization-server, oauth-protected-resource,
+  api-catalog, ai-plugin.json and mcp.json are all false positives;
+  (2) www.terret.ai returns a clean HTTP 404 for the same paths.
+  Because no path returned a 200 carrying a real document, NO WellKnown and NO
+  SecurityTxt pointer is wired in apis.yml. The provider's only machine-readable
+  discovery surface is the OpenAPI at https://app.boostup.ai/export/openapi.json,
+  which is not advertised from any well-known location.
+  The A2A agent-card probe is recorded here too and also missed on every host, so
+  no a2a/ artifact was authored.
 hosts:
 - host: https://app.boostup.ai
+  behaviour: SPA catch-all returns 200 text/html (3018 bytes) for every path
   documents:
   - path: /.well-known/security.txt
     status: 200
@@ -25,6 +34,10 @@ hosts:
     status: 200
     real: false
     content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    real: false
+    content_type: text/html
   - path: /.well-known/api-catalog
     status: 200
     real: false
@@ -33,10 +46,64 @@ hosts:
     status: 200
     real: false
     content_type: text/html
+  - path: /.well-known/mcp.json
+    status: 200
+    real: false
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 200
+    real: false
+    content_type: text/html
+    note: A2A probe — HTML shell, rejected
+  - path: /.well-known/agent.json
+    status: 200
+    real: false
+    content_type: text/html
+    note: A2A legacy path probe — HTML shell, rejected
+- host: https://www.terret.ai
+  behaviour: clean 404 (Webflow) for every path
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    real: false
+  - path: /.well-known/openid-configuration
+    status: 404
+    real: false
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    real: false
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    real: false
+  - path: /.well-known/api-catalog
+    status: 404
+    real: false
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    real: false
+  - path: /.well-known/mcp.json
+    status: 404
+    real: false
+  - path: /.well-known/agent-card.json
+    status: 404
+    real: false
+    note: A2A probe
+  - path: /.well-known/agent.json
+    status: 404
+    real: false
+    note: A2A legacy path probe
 - host: https://boostup.ai
+  behaviour: redirects to the terret.ai marketing SPA, which answers 200 text/html
   documents:
   - path: /.well-known/security.txt
     status: 200
     real: false
     content_type: text/html
-    note: redirects to terret.ai marketing SPA
+  - path: /.well-known/agent-card.json
+    status: 200
+    real: false
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 200
+    real: false
+    content_type: text/html

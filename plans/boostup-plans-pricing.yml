@@ -1,0 +1,31 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.terret.ai/pricing
+plan_count: 0
+pricing_published: false
+model: enterprise-sales
+note: >-
+  Terret (formerly BoostUp.ai) publishes no pricing. https://www.terret.ai/pricing
+  returns HTTP 200 but is a soft hit — the Webflow site serves the "Book a Demo"
+  lead-capture page for that path, with a qualification form (CRM in use, sales
+  team size, products of interest) and no tiers, prices, quotas or overage terms
+  anywhere on it. The published sitemap (240 URLs) contains no pricing page at
+  all; the only commercial path on the site is /demo/. Because the 200 carries no
+  pricing document, NO `Pricing` pointer is wired in apis.yml — a 200 is not
+  evidence of a published price.
+  The Export API is a capability of the platform subscription, not a separately
+  metered product: the API docs state access is granted per-customer by a CSM
+  ("If you cannot access the API Key generation tool you may not have been
+  granted access. Please reach out to your CSM"), so there is no self-serve API
+  plan to record.
+plans: []
+evidence:
+- url: https://www.terret.ai/pricing
+  status: 200
+  finding: renders the Book a Demo lead form; no tiers, prices or quotas
+- url: https://www.terret.ai/sitemap.xml
+  status: 200
+  finding: 240 URLs, none matching pricing/plans
+- url: https://app.boostup.ai/export/openapi.json
+  status: 200
+  finding: API access described as CSM-granted; no metering or quota surface

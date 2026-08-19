@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boostup Export API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Export",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Export Opportunity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/export/export/opportunity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Exports opportunities"
+        },
+        {
+          "info": {
+            "name": "Export Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/export/export/account",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Exports accounts"
+        },
+        {
+          "info": {
+            "name": "Export Forecast Submission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/export/export/forecast_submission",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Exports forecast submissions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
