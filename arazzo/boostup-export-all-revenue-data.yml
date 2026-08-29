@@ -7,8 +7,8 @@ info:
     of the Boostup / Terret Export API in one run, ready to page through with
     limit/skip.
 sourceDescriptions:
-- name: boostup
-  url: ../openapi/boostup-openapi-original.json
+- name: exportApi
+  url: ../openapi/boostup-export-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: export-all-revenue-data
