@@ -1,7 +1,7 @@
 {
   "provider": "boostup",
   "sources": [
-    "boostup-export-api-openapi.yml"
+    "_original/boostup-openapi-original.json"
   ],
   "outputs": [
     "boostup-export-api-openapi.yml"
@@ -9,6 +9,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "boostup-openapi-original.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "boostup-openapi-original.json: declared missing tag: Export",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "boostup-export-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
