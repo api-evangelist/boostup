@@ -160,113 +160,6 @@ paths:
       - APIKeyHeader: []
 components:
   schemas:
-    ExportAccountFilter:
-      properties:
-        limit:
-          type: integer
-          maximum: 1000.0
-          minimum: 1.0
-          title: Limit
-        skip:
-          type: integer
-          minimum: 0.0
-          title: Skip
-        created_date:
-          $ref: '#/components/schemas/DateFilter'
-        updated_at:
-          $ref: '#/components/schemas/DateFilter'
-        email_domain:
-          type: string
-          title: Email Domain
-        account_id:
-          type: string
-          title: Account Id
-      type: object
-      required:
-      - limit
-      - skip
-      title: ExportAccountFilter
-      description: Filters for the export account endpoint
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
-    ExportForecastSubmissionResponse:
-      properties:
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          examples:
-          - '2026-07-18T17:41:55.182215+00:00'
-        business_type:
-          type: string
-          title: Business Type
-        user:
-          type: string
-          title: User
-        forecast_name:
-          type: string
-          title: Forecast Name
-        period_type:
-          type: string
-          title: Period Type
-        week:
-          type: integer
-          title: Week
-        month:
-          type: integer
-          title: Month
-        quarter:
-          type: integer
-          title: Quarter
-        year:
-          type: integer
-          title: Year
-        amount:
-          type: number
-          title: Amount
-        notes:
-          type: string
-          title: Notes
-        in_time:
-          type: boolean
-          title: In Time
-          default: true
-        submission_type:
-          type: string
-          title: Submission Type
-        total_deals:
-          type: integer
-          title: Total Deals
-        total_included_deals:
-          type: integer
-          title: Total Included Deals
-        included_deals:
-          items:
-            $ref: '#/components/schemas/SubmittedOpportunity'
-          type: array
-          title: Included Deals
-        excluded_deals:
-          items:
-            $ref: '#/components/schemas/SubmittedOpportunity'
-          type: array
-          title: Excluded Deals
-      type: object
-      required:
-      - created_at
-      - forecast_name
-      - period_type
-      - year
-      - amount
-      - submission_type
-      title: ExportForecastSubmissionResponse
-      description: Forecast submission fields to be exported
     ExportLastActivity:
       properties:
         occurred_at:
@@ -289,119 +182,6 @@ components:
       - activity_type
       title: ExportLastActivity
       description: LastActivity fields to be exported
-    SubmittedOpportunity:
-      properties:
-        opportunity_id:
-          type: string
-          title: Opportunity Id
-        opportunity_name:
-          type: string
-          title: Opportunity Name
-      type: object
-      title: SubmittedOpportunity
-      description: Fields of an Included/Excluded Opportunity in a Forecast Submission
-    DateFilter:
-      properties:
-        start_date:
-          type: string
-          format: date-time
-          title: Start Date
-        end_date:
-          type: string
-          format: date-time
-          title: End Date
-          description: end_date defaults to now if not provided
-      type: object
-      required:
-      - start_date
-      title: DateFilter
-      description: 'Date filter model
-
-
-        The start_date is required, the end_date if not provided will be set to the
-
-        current date'
-    ExportLastEvent:
-      properties:
-        event:
-          type: string
-          title: Event
-        occurred_at:
-          type: string
-          format: date-time
-          title: Occurred At
-          examples:
-          - '2026-07-18T17:41:55.181345+00:00'
-      type: object
-      title: ExportLastEvent
-      description: LastEvent fields to be exported
-    ValidationError:
-      properties:
-        loc:
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-          type: array
-          title: Location
-        msg:
-          type: string
-          title: Message
-        type:
-          type: string
-          title: Error Type
-      type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
-    ExceptionSchema:
-      properties:
-        detail:
-          type: string
-          title: Detail
-      type: object
-      required:
-      - detail
-      title: ExceptionSchema
-      description: Exception Schema for managing Unauthorized or Not Authenticated errors
-    ExportOpportunityFilter:
-      properties:
-        limit:
-          type: integer
-          maximum: 1000.0
-          minimum: 1.0
-          title: Limit
-        skip:
-          type: integer
-          minimum: 0.0
-          title: Skip
-        created_date:
-          $ref: '#/components/schemas/DateFilter'
-        closed_date:
-          $ref: '#/components/schemas/DateFilter'
-        updated_at:
-          $ref: '#/components/schemas/DateFilter'
-      type: object
-      required:
-      - limit
-      - skip
-      title: ExportOpportunityFilter
-      description: Filters for the export opportunity endpoint
-    ExportAdditionalField:
-      properties:
-        field:
-          type: string
-          title: Field
-        value:
-          title: Value
-        display_name:
-          type: string
-          title: Display Name
-      type: object
-      title: ExportAdditionalField
-      description: AdditionalField fields to be exported
     ExportIndicator:
       properties:
         name:
@@ -431,6 +211,54 @@ components:
       - updated_at
       title: ExportIndicator
       description: Indicator fields to be exported
+    DateFilter:
+      properties:
+        start_date:
+          type: string
+          format: date-time
+          title: Start Date
+        end_date:
+          type: string
+          format: date-time
+          title: End Date
+          description: end_date defaults to now if not provided
+      type: object
+      required:
+      - start_date
+      title: DateFilter
+      description: 'Date filter model
+
+
+        The start_date is required, the end_date if not provided will be set to the
+
+        current date'
+    ExportAccountFilter:
+      properties:
+        limit:
+          type: integer
+          maximum: 1000.0
+          minimum: 1.0
+          title: Limit
+        skip:
+          type: integer
+          minimum: 0.0
+          title: Skip
+        created_date:
+          $ref: '#/components/schemas/DateFilter'
+        updated_at:
+          $ref: '#/components/schemas/DateFilter'
+        email_domain:
+          type: string
+          title: Email Domain
+        account_id:
+          type: string
+          title: Account Id
+      type: object
+      required:
+      - limit
+      - skip
+      title: ExportAccountFilter
+      description: Filters for the export account endpoint
     ExportOpportunityResponse:
       properties:
         last_touched:
@@ -523,75 +351,6 @@ components:
       - risk_score
       title: ExportOpportunityResponse
       description: Opportunity fields to be exported
-    ExportNextEvent:
-      properties:
-        event:
-          type: string
-          title: Event
-        start:
-          type: string
-          format: date-time
-          title: Start
-          examples:
-          - '2026-07-18T17:41:55.182875+00:00'
-      type: object
-      title: ExportNextEvent
-      description: NextEvent fields to be exported
-    ExportCRMMetaDataOpportunity:
-      properties:
-        close_date:
-          type: string
-          title: Close Date
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          examples:
-          - '2026-07-18T17:41:55.181883+00:00'
-        opportunity_id:
-          type: string
-          title: Opportunity Id
-        opportunity_name:
-          type: string
-          title: Opportunity Name
-        opportunity_stage:
-          type: string
-          title: Opportunity Stage
-        opportunity_closed:
-          type: boolean
-          title: Opportunity Closed
-        opportunity_won:
-          type: boolean
-          title: Opportunity Won
-        currency:
-          type: string
-          title: Currency
-        next_step:
-          type: string
-          title: Next Step
-        forecast_category_name:
-          type: string
-          title: Forecast Category Name
-        opportunity_type:
-          type: string
-          title: Opportunity Type
-        probability:
-          type: number
-          title: Probability
-        additional_fields:
-          items:
-            $ref: '#/components/schemas/ExportAdditionalField'
-          type: array
-          title: Additional Fields
-        last_sync:
-          type: string
-          format: date-time
-          title: Last Sync
-          examples:
-          - '2026-07-18T17:41:55.182126+00:00'
-      type: object
-      title: ExportCRMMetaDataOpportunity
-      description: CRMMetaDataOpportunity fields to be exported
     ExportAccountResponse:
       properties:
         last_touched:
@@ -669,6 +428,275 @@ components:
       - crm_metadata
       title: ExportAccountResponse
       description: Account fields to be exported
+    ExportOpportunityFilter:
+      properties:
+        limit:
+          type: integer
+          maximum: 1000.0
+          minimum: 1.0
+          title: Limit
+        skip:
+          type: integer
+          minimum: 0.0
+          title: Skip
+        created_date:
+          $ref: '#/components/schemas/DateFilter'
+        closed_date:
+          $ref: '#/components/schemas/DateFilter'
+        updated_at:
+          $ref: '#/components/schemas/DateFilter'
+      type: object
+      required:
+      - limit
+      - skip
+      title: ExportOpportunityFilter
+      description: Filters for the export opportunity endpoint
+    ExportLastEvent:
+      properties:
+        event:
+          type: string
+          title: Event
+        occurred_at:
+          type: string
+          format: date-time
+          title: Occurred At
+          examples:
+          - '2026-07-18T17:41:55.181345+00:00'
+      type: object
+      title: ExportLastEvent
+      description: LastEvent fields to be exported
+    ExportCRMMetaDataOpportunity:
+      properties:
+        close_date:
+          type: string
+          title: Close Date
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+          examples:
+          - '2026-07-18T17:41:55.181883+00:00'
+        opportunity_id:
+          type: string
+          title: Opportunity Id
+        opportunity_name:
+          type: string
+          title: Opportunity Name
+        opportunity_stage:
+          type: string
+          title: Opportunity Stage
+        opportunity_closed:
+          type: boolean
+          title: Opportunity Closed
+        opportunity_won:
+          type: boolean
+          title: Opportunity Won
+        currency:
+          type: string
+          title: Currency
+        next_step:
+          type: string
+          title: Next Step
+        forecast_category_name:
+          type: string
+          title: Forecast Category Name
+        opportunity_type:
+          type: string
+          title: Opportunity Type
+        probability:
+          type: number
+          title: Probability
+        additional_fields:
+          items:
+            $ref: '#/components/schemas/ExportAdditionalField'
+          type: array
+          title: Additional Fields
+        last_sync:
+          type: string
+          format: date-time
+          title: Last Sync
+          examples:
+          - '2026-07-18T17:41:55.182126+00:00'
+      type: object
+      title: ExportCRMMetaDataOpportunity
+      description: CRMMetaDataOpportunity fields to be exported
+    ExceptionSchema:
+      properties:
+        detail:
+          type: string
+          title: Detail
+      type: object
+      required:
+      - detail
+      title: ExceptionSchema
+      description: Exception Schema for managing Unauthorized or Not Authenticated errors
+    ExportForecastSubmissionResponse:
+      properties:
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+          examples:
+          - '2026-07-18T17:41:55.182215+00:00'
+        business_type:
+          type: string
+          title: Business Type
+        user:
+          type: string
+          title: User
+        forecast_name:
+          type: string
+          title: Forecast Name
+        period_type:
+          type: string
+          title: Period Type
+        week:
+          type: integer
+          title: Week
+        month:
+          type: integer
+          title: Month
+        quarter:
+          type: integer
+          title: Quarter
+        year:
+          type: integer
+          title: Year
+        amount:
+          type: number
+          title: Amount
+        notes:
+          type: string
+          title: Notes
+        in_time:
+          type: boolean
+          title: In Time
+          default: true
+        submission_type:
+          type: string
+          title: Submission Type
+        total_deals:
+          type: integer
+          title: Total Deals
+        total_included_deals:
+          type: integer
+          title: Total Included Deals
+        included_deals:
+          items:
+            $ref: '#/components/schemas/SubmittedOpportunity'
+          type: array
+          title: Included Deals
+        excluded_deals:
+          items:
+            $ref: '#/components/schemas/SubmittedOpportunity'
+          type: array
+          title: Excluded Deals
+      type: object
+      required:
+      - created_at
+      - forecast_name
+      - period_type
+      - year
+      - amount
+      - submission_type
+      title: ExportForecastSubmissionResponse
+      description: Forecast submission fields to be exported
+    ExportNextEvent:
+      properties:
+        event:
+          type: string
+          title: Event
+        start:
+          type: string
+          format: date-time
+          title: Start
+          examples:
+          - '2026-07-18T17:41:55.182875+00:00'
+      type: object
+      title: ExportNextEvent
+      description: NextEvent fields to be exported
+    ExportCRMMetaDataAccount:
+      properties:
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+          examples:
+          - '2026-07-18T17:41:55.182924+00:00'
+        account_id:
+          type: string
+          title: Account Id
+        account_name:
+          type: string
+          title: Account Name
+        additional_fields:
+          items:
+            $ref: '#/components/schemas/ExportAdditionalField'
+          type: array
+          title: Additional Fields
+        last_sync:
+          type: string
+          format: date-time
+          title: Last Sync
+          examples:
+          - '2026-07-18T17:41:55.183049+00:00'
+      type: object
+      title: ExportCRMMetaDataAccount
+      description: CRMMetaDataAccount fields to be exported
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ExportAdditionalField:
+      properties:
+        field:
+          type: string
+          title: Field
+        value:
+          title: Value
+        display_name:
+          type: string
+          title: Display Name
+      type: object
+      title: ExportAdditionalField
+      description: AdditionalField fields to be exported
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    SubmittedOpportunity:
+      properties:
+        opportunity_id:
+          type: string
+          title: Opportunity Id
+        opportunity_name:
+          type: string
+          title: Opportunity Name
+      type: object
+      title: SubmittedOpportunity
+      description: Fields of an Included/Excluded Opportunity in a Forecast Submission
     ExportForecastSubmissionFilter:
       properties:
         limit:
@@ -715,34 +743,6 @@ components:
       - skip
       title: ExportForecastSubmissionFilter
       description: Filters for the export forecast submission endpoint
-    ExportCRMMetaDataAccount:
-      properties:
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          examples:
-          - '2026-07-18T17:41:55.182924+00:00'
-        account_id:
-          type: string
-          title: Account Id
-        account_name:
-          type: string
-          title: Account Name
-        additional_fields:
-          items:
-            $ref: '#/components/schemas/ExportAdditionalField'
-          type: array
-          title: Additional Fields
-        last_sync:
-          type: string
-          format: date-time
-          title: Last Sync
-          examples:
-          - '2026-07-18T17:41:55.183049+00:00'
-      type: object
-      title: ExportCRMMetaDataAccount
-      description: CRMMetaDataAccount fields to be exported
   securitySchemes:
     APIKeyHeader:
       type: apiKey
