@@ -94,6 +94,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/boostup-capability-edges.yml
+  name: Boostup Business Capability Map
 - type: Arazzo
   url: arazzo/boostup-export-all-revenue-data.yml
 - type: AgentSkill
