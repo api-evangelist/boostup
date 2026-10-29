@@ -64,6 +64,141 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Boostup is a company surfaced as a portfolio company of canaan-partners and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Boostup (now operating as Terret, terret.ai) is an AI-powered revenue intelligence platform that connects data across a company's revenue systems to analyze sales performance, forecast pipeline, and translate insights into real-time execution guidance for sales teams. Its products include Terret Nexus (an answer-to-action revenue engine that generates playbooks), Terret Forecast (pipeline forecasting), and Terret Conversation Intelligence (call analysis). For developers, Boostup exposes a public REST data-export API at app.boostup.ai/export that lets customers programmatically pull their Opportunities, Accounts, and Forecast Submissions out of the platform for in-house analysis and reporting. The API is authenticated with API keys passed in the Authorization header, returns JSON paginated in batches of up to 1000 records, and supports date-based filtering on close/create/update times. The company was surfaced as a portfolio company of Canaan Partners.
 
-Backed by: canaan-partners
+**Areas:** Company · Revenue Intelligence · Sales · Forecasting · Analytics · Revenue Operations · Conversation Intelligence · Data Export · CRM
+
+## Boostup on APIs.io
+
+Everything profiled for Boostup is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/boostup/](https://apis.io/providers/boostup/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Boostup Export API](https://apis.io/apis/boostup/boostup-export-api/) — The Export API from Boostup — 3 operation(s) for export.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Arazzo workflows (1)
+
+Multi-step workflows that chain operations into a business task.
+
+- [Export all Boostup revenue data](https://apis.io/arazzos/boostup/boostup-export-all-revenue-data/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [boostup](https://apis.io/servers/boostup/boostup/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Boostup Agentic Access](https://apis.io/agentic-access/boostup/boostup-agentic-access/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Boostup Export API](https://apis.io/collections/boostup/open-boostup-export-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Boostup Export Overlay](https://apis.io/overlays/boostup/boostup-export-overlay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Boostup Authentication](https://apis.io/security/boostup/boostup-authentication/)
+- [Boostup Domain Security](https://apis.io/security/boostup/boostup-domain-security/)
+- [Boostup Trust Center](https://apis.io/security/boostup/boostup-trust-center/)
+- [Boostup Vulnerability Disclosure](https://apis.io/security/boostup/boostup-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Boostup Plans Pricing](https://apis.io/plans/boostup/boostup-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Boostup Rate Limits](https://apis.io/rate-limits/boostup/boostup-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.terret.ai/)
+- [Documentation](https://app.boostup.ai/export/docs/)
+- [API reference](https://app.boostup.ai/export/docs/)
+- [Sign up](https://app.boostup.ai/login)
+- [Support](https://support.boostup.ai/hc/en-us)
+- [Blog](https://www.terret.ai/blogs)
+- [Security](https://www.terret.ai/vulnerability-disclosure-policy/)
+- [Compliance](https://www.terret.ai/security)
+- [Trust centre](https://www.terret.ai/security)
+- [Terms of service](https://www.terret.ai/terms-and-conditions/)
+- [Privacy policy](https://www.terret.ai/privacy-policy/)
+- [Status](https://status.boostup.ai/)
+
+## API Evangelist rating
+
+**Kin Score 42.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 47.8 |
+| Contract governance | 18.2 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 37.5 |
+| Access clarity | 36.8 |
+
+**Agent readiness 28.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/boostup/](https://apis.io/providers/boostup/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Boostup: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/boostup/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
